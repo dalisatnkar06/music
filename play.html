@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>YOU TUBE PAGE</title>
+    <link rel="stylesheet" href="play.css">
+</head>
+
+<body>
+    <div class="main_div">
+        <div class="container">
+            <h2 class="title">Arijit Singh</h2>
+            <h3 class="artist">Hawayien</h3>
+            <div class="img_container" alt class="anime">
+                <img src="nature_one.avif" id="image_one">
+            </div>
+            <audio src="song_one.mp3" id="first_music"></audio>
+            <div class="music_control">
+                <i class="fa-solid fa-backward" id="prev" title="previous" style="margin-right:70px; color:#111;font-size:20px;"></i>
+                <i class="fa-solid fa-play" id="play" title="play"></i>
+                <!-- <i class="fa-solid fa-pause" id="pause" title="pause"></i> -->
+                <i class="fa-solid fa-forward" id="next" title="Next" style="margin-left:70px; color:#111; font-size:20px;"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        const music = document.getElementById("first_music");
+        const img = document.getElementById("image_one");
+        const play = document.getElementById("play");
+
+        let isplaying = false;
+
+        play.addEventListener("click", () => {
+            isplaying ? pausemusic() : playmusic();
+        });
+        //play function
+
+
+        function playmusic() {
+            isplaying = true;
+            music.play();
+            play.classList.remove("fa-play");
+            play.classList.add("fa-pause")
+            img.classList.add("anime")
+        }
+
+        function pausemusic() {
+            isplaying = false;
+            music.pause();
+            play.classList.remove("fa-pause");
+            play.classList.add("fa-play")
+            img.classList.remove("anime")
+        }
+    </script>
+</body>
+
+</html>
